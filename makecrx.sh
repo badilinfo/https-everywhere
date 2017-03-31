@@ -122,7 +122,7 @@ sig_len_hex=$(byte_swap $(printf '%08x\n' $(ls -l "$sig" | awk '{print $5}')))
   cat "$pub" "$sig" "$zip"
 ) > "$crx"
 
-cp $crx $xpi
+cp $zip $xpi
 
 bash utils/android-push.sh "$xpi"
 
